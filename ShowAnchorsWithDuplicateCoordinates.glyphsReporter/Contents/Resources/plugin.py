@@ -1,4 +1,5 @@
 # encoding: utf-8
+from __future__ import division, print_function, unicode_literals
 
 ###########################################################################################################
 #
@@ -17,18 +18,17 @@ from GlyphsApp.plugins import *
 
 class ShowAnchorsWithDuplicateCoordinates(ReporterPlugin):
 
+	@objc.python_method
 	def settings(self):
 		self.menuName = Glyphs.localize({
 			'en': u'Anchors with Duplicate Coordinates', 
 			'de': u'Anker mit selben Koordinaten',
 			'es': u'anclas con mismas coordenadas',
-			'fr': u'ancres avec mêmes coordinées',
+			'fr': u'ancres avec mêmes coordonnées',
 			'pt': u'âncoras com as mesmas coordenadas',
 		})
-		# self.generalContextMenus = [
-		# 	{'name': Glyphs.localize({'en': u'Do something', 'de': u'Tu etwas'}), 'action': self.doSomething},
-		# ]
 	
+	@objc.python_method
 	def conditionsAreMetForDrawing(self):
 		"""
 		Don't activate if text or pan (hand) tool are active.
@@ -42,10 +42,12 @@ class ShowAnchorsWithDuplicateCoordinates(ReporterPlugin):
 				return True
 		return False
 		
+	@objc.python_method
 	def background(self, layer):
 		if self.conditionsAreMetForDrawing():
 			self.drawCirclesAroundDoubleAnchors(layer)
 	
+	@objc.python_method
 	def handleSize(self):
 		# calculate handle size:
 		handleSizes = (5, 8, 12) # possible user settings
@@ -53,6 +55,7 @@ class ShowAnchorsWithDuplicateCoordinates(ReporterPlugin):
 		handleSize = handleSizes[handleSizeIndex]*self.getScale()**-0.9 # scaled diameter
 		return handleSize
 		
+	@objc.python_method
 	def drawCirclesAroundDoubleAnchors(self, layer):
 		collectedCoords = []
 
@@ -63,7 +66,6 @@ class ShowAnchorsWithDuplicateCoordinates(ReporterPlugin):
 					collectedCoords.append(pos)
 		
 		if collectedCoords:
-			# NSColor.colorWithRed_green_blue_alpha_(1.0, 0.1, 0.3, 0.6).set()
 			circleSize = self.handleSize()*2
 			for position in collectedCoords:
 				# # selected handles are a little bigger:
@@ -79,12 +81,8 @@ class ShowAnchorsWithDuplicateCoordinates(ReporterPlugin):
 				circle.setLineWidth_( 2.0 / self.getScale() )
 				NSColor.yellowColor().set()
 				circle.stroke()
-				
-					
 	
-	# def doSomething(self):
-	# 	print 'Just did something'
-		
+	@objc.python_method
 	def __file__(self):
 		"""Please leave this method unchanged"""
 		return __file__
