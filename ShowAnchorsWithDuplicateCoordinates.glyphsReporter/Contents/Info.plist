@@ -16,6 +16,12 @@
 	<string>2.0.4</string>
 	<key>CFBundleVersion</key>
 	<string>7</string>
+	<key>UpdateFeedURL</key>
+	<string>https://raw.githubusercontent.com/mekkablue/ShowAnchorsWithDuplicateCoordinates/master/ShowAnchorsWithDuplicateCoordinates.glyphsReporter/Contents/Info.plist</string>
+	<key>productPageURL</key>
+	<string>https://github.com/mekkablue/ShowAnchorsWithDuplicateCoordinates</string>
+	<key>productReleaseNotes</key>
+	<string>update binary files for Glyphs3</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, Rainer Erich Scheichelbauer, 2019</string>
 	<key>NSPrincipalClass</key>
@@ -24,11 +30,5 @@
 	<array>
 		<string>plugin.py</string>
 	</array>
-	<key>UpdateFeedURL</key>
-	<string>https://raw.githubusercontent.com/mekkablue/ShowAnchorsWithDuplicateCoordinates/master/ShowAnchorsWithDuplicateCoordinates.glyphsReporter/Contents/Info.plist</string>
-	<key>productPageURL</key>
-	<string>https://github.com/mekkablue/ShowAnchorsWithDuplicateCoordinates</string>
-	<key>productReleaseNotes</key>
-	<string>update binary files for Glyphs3</string>
 </dict>
 </plist>
