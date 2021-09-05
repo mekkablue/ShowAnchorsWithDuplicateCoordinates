@@ -15,7 +15,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>2.0.4</string>
 	<key>CFBundleVersion</key>
-	<string>7</string>
+	<string>8</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/ShowAnchorsWithDuplicateCoordinates/master/ShowAnchorsWithDuplicateCoordinates.glyphsReporter/Contents/Info.plist</string>
 	<key>productPageURL</key>
